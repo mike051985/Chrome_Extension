@@ -1,11 +1,13 @@
-let myLeads = ["www.google.com", "www.yahoo.com", "www.facebook.com"]
+let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    console.log(myLeads)
+    // Clear out the input field
+    inputEl.value = ""
+    renderLeads()
 })
 
 /*
@@ -19,10 +21,19 @@ for (let i = 0; i < myLeads.length; i++) {
     
 }
 */
-
-let listItems = ""
-for (let i = 0; i < myLeads.length; i++) {
-    listItems += "<li>" + myLeads[i] + "</li>"
+function renderLeads() {
+    let listItems = ""
+    for (let i = 0; i < myLeads.length; i++) {
+        //listItems += "<li><a href='' target='_blank'>" + myLeads[i] + "</a></li>"
+        listItems += `
+            <li>
+                <a href='${myLeads[i]}' target='_blank'> 
+                    ${myLeads[i]}
+                </a>
+            </li>
+        `
+    }
+    
+    ulEl.innerHTML = listItems
 }
 
-ulEl.innerHTML = listItems
