@@ -27,7 +27,7 @@ function renderLeads() {
         //listItems += "<li><a href='' target='_blank'>" + myLeads[i] + "</a></li>"
         listItems += `
             <li>
-                <a href='${myLeads[i]}' target='_blank'> 
+                <a target='_blank' href='${myLeads[i]}'>
                     ${myLeads[i]}
                 </a>
             </li>
